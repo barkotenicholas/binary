@@ -12,13 +12,15 @@ public class Main {
         tree.insert(26);
         tree.insert(22);
         tree.insert(32);
-
-       // tree.inorder();
+        // tree.inorder();
 
         //System.out.println(tree.getRoot(32));
         System.out.println(tree.getRoot(15));
         System.out.println(tree.getRoot(22));
         System.out.println(tree.getRoot(15));
         System.out.println(tree.getRoot(220));
+
+        System.out.println(tree.min());
+        System.out.println(tree.max());
     }
 }

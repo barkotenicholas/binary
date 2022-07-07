@@ -24,6 +24,23 @@ public class Node {
         return null;
     }
 
+    public int min(){
+        if(leftNode == null){
+            return data;
+        }else {
+            return leftNode.min();
+        }
+
+    }
+
+    public int max(){
+        if(rightNode == null){
+            return data;
+        }else {
+            return rightNode.max();
+        }
+    }
+
     public void insert(int value) {
 
         if (value == data) {
