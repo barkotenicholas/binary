@@ -7,6 +7,23 @@ public class Node {
         this.data = data;
     }
 
+    public Node getNode(int value){
+        if(data == value){
+            return this;
+        }
+
+        if(value < data){
+            if(leftNode != null){
+                return leftNode.getNode(value);
+            }
+        }else {
+            if (rightNode != null){
+                return rightNode.getNode(value);
+            }
+        }
+        return null;
+    }
+
     public void insert(int value) {
 
         if (value == data) {
@@ -27,6 +44,17 @@ public class Node {
         }
 
 
+    }
+
+    public void inorder(){
+        if(leftNode != null){
+            leftNode.inorder();
+        }
+        System.out.print("Data =" + data+ ", ");
+
+        if (rightNode != null){
+            rightNode.inorder();
+        }
     }
 
     public int getData() {
@@ -51,5 +79,11 @@ public class Node {
 
     public void setRightNode(Node rightNode) {
         this.rightNode = rightNode;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Data => "+data;
     }
 }
